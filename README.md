@@ -1,5 +1,10 @@
 # 💫 About Me:
-👋 Hi, I'm Amir mohammad Yousefi.<br>🚀 I'm a software engineer.<br>🎯 I currently learning advance python<br>
+👋 Hi, I'm Amir Mohammad Yousefi.<br>
+🚀 Passionate Software Engineer | Python Enthusiast<br>
+🎯 Currently diving deep into advanced Python and building meaningful projects<br>
+💻 Tech Stack: Python, C, C++, C#, Django, HTML5, CSS3<br>
+🌱 Always learning, exploring new technologies, and improving my coding skills<br>
+📫 Reach me via email for collaboration or questions<br>
 
 
 ## 🌐 Socials:
