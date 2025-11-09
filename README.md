@@ -1,80 +1,29 @@
-import os
-import requests
-import math
-import re
+# Hi there 👋
+# 💫 About Me:
+👋 Hi, I'm Amir mohammad Yousefi.<br>🚀 I'm a software engineer.<br>🎯 I currently learning advance python<br>
 
-USERNAME = "AmirrrrMH"
-TOKEN = os.getenv("GH_TOKEN")
+<!--
+**AmirrrrMH/AmirrrrMH** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-API_URL = "https://api.github.com/user/repos?per_page=100&type=owner"
+Here are some ideas to get you started:
+## 🌐 Socials:
+[![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:yosefiamirmohammas@gmail.com) 
 
-LANG_COLORS = {
-    "Python": "#3572A5",
-    "JavaScript": "#F1E05A",
-    "HTML": "#E34C26",
-    "CSS": "#563D7C",
-    "C": "#555555",
-    "C++": "#00599C",
-    "C#": "#178600",
-    "Django": "#092E20",
-}
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
+# 💻 Tech Stack:
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=AmirrrrMH&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=AmirrrrMH&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=AmirrrrMH&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-def fetch_repos():
-    headers = {"Authorization": f"token {TOKEN}"}
-    repos = []
-    page = 1
-    while True:
-        res = requests.get(f"{API_URL}&page={page}", headers=headers).json()
-        if not res or "message" in res:
-            break
-        repos.extend(res)
-        page += 1
-    return repos
-
-def fetch_languages(repo_full_name):
-    headers = {"Authorization": f"token {TOKEN}"}
-    url = f"https://api.github.com/repos/{repo_full_name}/languages"
-    return requests.get(url, headers=headers).json()
-
-def generate_bar_chart(lang, percent, color):
-    bar_length = math.floor(percent / 4)
-    bar = "█" * bar_length
-    return f"<span style='color:{color}; font-weight:bold'>{lang.ljust(12)}</span> {bar} {percent:.1f}%"
-
-def update_readme(content_block):
-    with open("README.md", "r", encoding="utf-8") as f:
-        content = f.read()
-    
-    pattern = r"(<!-- LANGUAGES-OVERVIEW:START -->)(.*?)(<!-- LANGUAGES-OVERVIEW:END -->)"
-    replacement = r"\1\n" + content_block + r"\n\3"
-    content = re.sub(pattern, replacement, content, flags=re.DOTALL)
-
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(content)
-
-def main():
-    repos = fetch_repos()
-    language_totals = {}
-
-    for repo in repos:
-        langs = fetch_languages(repo["full_name"])
-        for lang, value in langs.items():
-            language_totals[lang] = language_totals.get(lang, 0) + value
-
-    total = sum(language_totals.values())
-    if total == 0:
-        return
-
-    sorted_langs = sorted(language_totals.items(), key=lambda x: x[1], reverse=True)[:6]
-
-    md = "## 📊 Languages Overview (Auto Updated)\n\n"
-    for lang, val in sorted_langs:
-        percent = (val / total) * 100
-        color = LANG_COLORS.get(lang, "#AAAAAA")
-        md += generate_bar_chart(lang, percent, color) + "<br>\n"
-
-    update_readme(md)
-
-if __name__ == "__main__":
-    main()
-
+---
+[![](https://visitcount.itsvg.in/api?id=AmirrrrMH&icon=0&color=0)](https://visitcount.itsvg.in)
