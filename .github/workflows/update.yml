@@ -17,11 +17,14 @@ jobs:
         with:
           username: AmirrrrMH
       - run: |
-          curl -H "Authorization: token ${{ secrets.TOKEN }}" https://api.github.com/users/AmirrrrMH/repos?per_page=100&type=all | jq -r '.[]?.language' | grep -v null | sort | uniq -c | sort -nr | head -10 | awk '{print $2}' | paste -sd, - | sed 's/,/, /g' > l
+          curl -H "Authorization: token ${{ secrets.TOKEN }}" \
+            https://api.github.com/users/AmirrrrMH/repos?per_page=100&type=all | \
+            jq -r '.[]?.language' | grep -v null | sort | uniq -c | sort -nr | \
+            head -10 | awk '{print $2}' | paste -sd, - | sed 's/,/, /g' > l
           sed -i 's|<!-- LANGUAGES-OVERVIEW:START -->.*<!-- LANGUAGES-OVERVIEW:END -->|<!-- LANGUAGES-OVERVIEW:START -->\nTop Languages: '"$(cat l)"'\n<!-- LANGUAGES-OVERVIEW:END -->|' README.md
       - run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add README.md
-          git diff --quiet || git commit -m "Auto update"
+          git diff --quiet || git commit -m "Auto update stats"
           git push
