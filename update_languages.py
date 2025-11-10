@@ -1,4 +1,3 @@
-
 import os
 import requests
 from datetime import datetime
@@ -25,12 +24,10 @@ def fetch_languages():
     return dict(sorted(lang_percent.items(), key=lambda x: x[1], reverse=True))
 
 def generate_table(lang_data):
-    table = "| Language | Percentage |
-|----------|-------------|
-"
+    table = "| Language | Percentage |\n"
+    table += "|----------|-------------|\n"
     for lang, percent in lang_data.items():
-        table += f"| {lang} | {percent}% |
-"
+        table += f"| {lang} | {percent}% |\n"
     return table
 
 def update_readme(content):
