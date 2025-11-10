@@ -30,10 +30,6 @@ def generate_table(lang_data):
         table += f"| {lang} | {percent}% |\n"
     return table
 
-def update_readme(content):
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(content)
-
 def main():
     langs = fetch_languages()
     table = generate_table(langs)
@@ -44,8 +40,18 @@ def main():
     start = "<!-- LANGUAGES-OVERVIEW:START -->"
     end = "<!-- LANGUAGES-OVERVIEW:END -->"
 
-    updated = readme.split(start)[0] + start + "\n" + table + "\n" + end + readme.split(end)[1]
-    update_readme(updated)
+    # فقط بخش بین کامنت‌ها رو عوض کن
+    if start in readme and end in readme:
+        before = readme.split(start)[0]
+        after = readme.split(end)[1]
+        updated = before + start + "\n" + table + end + after
+    else:
+        # اگر کامنت‌ها وجود ندارن، تغییر نده
+        print("Comment markers not found. No changes made.")
+        return
+
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(updated)
 
 if __name__ == "__main__":
     main()
