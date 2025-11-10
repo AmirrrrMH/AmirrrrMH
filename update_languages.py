@@ -40,18 +40,15 @@ def main():
     start = "<!-- LANGUAGES-OVERVIEW:START -->"
     end = "<!-- LANGUAGES-OVERVIEW:END -->"
 
-    # فقط بخش بین کامنت‌ها رو عوض کن
     if start in readme and end in readme:
         before = readme.split(start)[0]
         after = readme.split(end)[1]
         updated = before + start + "\n" + table + end + after
+        with open("README.md", "w", encoding="utf-8") as f:
+            f.write(updated)
+        print("README updated successfully!")
     else:
-        # اگر کامنت‌ها وجود ندارن، تغییر نده
         print("Comment markers not found. No changes made.")
-        return
-
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(updated)
 
 if __name__ == "__main__":
     main()
