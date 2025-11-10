@@ -17,6 +17,10 @@
 ![](https://nirzak-streak-stats.vercel.app/?user=AmirrrrMH&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=AmirrrrMH&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact&langs_count=8)
 <!-- LANGUAGES-OVERVIEW:START -->
+| Language | Percentage |
+|----------|-------------|
+| Python | 100.0% |
+
 <!-- LANGUAGES-OVERVIEW:END -->
 ---
 [![](https://visitcount.itsvg.in/api?id=AmirrrrMH&icon=0&color=0)](https://visitcount.itsvg.in)
