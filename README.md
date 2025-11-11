@@ -15,7 +15,7 @@
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=AmirrrrMH&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
 ![](https://nirzak-streak-stats.vercel.app/?user=AmirrrrMH&theme=dark&hide_border=false)<br/>
-![Top Languages]([https://amirrrrmhstats.vercel.app/api/top-langs/?username=AmirrrrMH&layout=compact&theme=dracula&hide_border=true](https://amirrrrmhstats.vercel.app/api/top-langs/?username=AmirrrrMH&layout=compact&theme=dracula&hide_border=true&exclude_repo=amirrrrmhstats))
+![Top Languages](https://amirrrrmhstats.vercel.app/api/top-langs/?username=AmirrrrMH&layout=compact&theme=dracula&hide_border=true&exclude_repo=amirrrrmhstats)
 
 ---
 [![](https://visitcount.itsvg.in/api?id=AmirrrrMH&icon=0&color=0)](https://visitcount.itsvg.in)
